@@ -1,4 +1,20 @@
 ;;;; package.lisp
 
-(defpackage #:play-with-vops
-  (:use :cl :sb-ext :sb-c))
+(uiop:define-package #:play-with-vops
+  (:use :cl :sb-ext :sb-c)
+  (:import-from :sb-sys
+                :system-area-pointer)
+  (:import-from :sb-assem
+                :inst)
+  (:import-from :sb-vm
+                :unsigned-reg
+                :sap-reg
+                :unsigned-num
+                :single-sse-reg)
+  (:import-from :sb-x86-64-asm
+                :movaps
+                :make-ea
+                :divps
+                :addps)
+  (:import-from :sb-c
+                :move))

@@ -47,8 +47,7 @@
            (time
             (loop :for test-run :below 100000 :do
                (setf run test-run)
-               (loop :for i :below times :by 4
-                  :do
+               (loop :for i :below times :by 4 :do
                   (%vec/ (* i 4)
                          arr-res
                          arr0
